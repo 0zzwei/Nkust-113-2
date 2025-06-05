@@ -1,0 +1,33 @@
+@model IEnumerable<OpenDataAnalyzerMvc.Models.ElderCareRecord>
+
+    @{
+        ViewData["Title"] = "長照服務資料清單";
+    }
+
+    <h2>@ViewData["Title"]</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>區域</th>
+                <th>電話問安</th>
+                <th>長照服務</th>
+                <th>其他服務</th>
+                <th>合計</th>
+                <th>服務人次</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.區域</td>
+                    <td>@item.電話問安</td>
+                    <td>@item.長照服務</td>
+                    <td>@item.其他服務</td>
+                    <td>@item.合計</td>
+                    <td>@item.服務人次</td>
+                </tr>
+            }
+        </tbody>
+    </table>
